@@ -19,3 +19,24 @@ async def ping(ctx):
 
 
 bot.run(token)
+
+// Response for Uptime Robot
+const http = require('http');
+http.createServer(function(request, response)
+{
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.end('Discord bot is active now \n');
+}).listen(3000);
+
+client.on('ready', message =>
+{
+  client.user.setPresence({ game: { name: 'with discord.js' } });  
+  console.log('bot is ready!');
+    if(message.content.startsWith('addch ')) {
+  
+  var channelName = message.content.replace(/^addch /, ''); 
+  
+  message.guild.createChannel(channelName);
+  return;
+}
+});
